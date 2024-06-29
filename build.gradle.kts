@@ -64,8 +64,8 @@ publishing {
             name = "WorldMandiaRepositorySnapshots"
             url = uri("https://repo.worldmandia.cc/snapshots")
             credentials {
-                username = getenv("MAVEN_NAME")
-                password = getenv("MAVEN_SECRET")
+                username = getenv("MAVENNAME")
+                password = getenv("MAVENSECRET")
             }
             authentication {
                 create<BasicAuthentication>("basic")
