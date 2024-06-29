@@ -42,8 +42,8 @@ kotlin {
 
 tasks {
     build {
-        println(getenv("MAVEN_NAME"))
-        println(getenv("MAVEN_SECRET"))
+        println(getenv("MAVENNAME"))
+        println(getenv("MAVENSECRET"))
     }
 }
 
@@ -53,8 +53,8 @@ publishing {
             name = "WorldMandiaRepositoryRelease"
             url = uri("https://repo.worldmandia.cc/releases")
             credentials {
-                username = getenv("MAVEN_NAME")
-                password = getenv("MAVEN_SECRET")
+                username = getenv("MAVENNAME")
+                password = getenv("MAVENSECRET")
             }
             authentication {
                 create<BasicAuthentication>("basic")
