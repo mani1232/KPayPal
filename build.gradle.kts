@@ -1,4 +1,3 @@
-import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.ByteArrayOutputStream
 import java.lang.System.getenv
 
@@ -7,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ktor)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.updateDeps)
     `maven-publish`
 }
 
@@ -31,7 +31,7 @@ val javadocJar = tasks.register<Jar>("javadocJar") {
 
 kotlin {
     withSourcesJar()
-    jvmToolchain(JavaVersion.VERSION_17.ordinal + 1)
+    jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
     jvm {
         withJava()
     }
@@ -77,7 +77,7 @@ publishing {
             version = rootProject.version.toString()
             from(components["kotlin"])
             pom {
-                name.set("KPayPal")
+                name.set("kpaypal-api")
                 description.set("Idiomatic Kotlin Wrapper for The PayPal API")
                 developers {
                     developer {
