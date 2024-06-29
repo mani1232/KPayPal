@@ -10,6 +10,7 @@ plugins {
 }
 
 group = "cc.worldmandia"
+rootProject.version = libraryVersion
 
 application {
     mainClass.set("cc.worldmandia.PPApiExampleKt")
@@ -67,7 +68,7 @@ publishing {
         create<MavenPublication>("kpaypalApi") {
             groupId = group.toString()
             artifactId = "kpaypal-api"
-            version = libraryVersion
+            version = rootProject.version.toString()
             from(components["java"])
         }
     }
