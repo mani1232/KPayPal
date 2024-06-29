@@ -42,16 +42,16 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlinx.coroutines)
+                api(libs.kotlinx.coroutines)
                 implementation(libs.other.klogging.slf4j)
-                implementation(libs.kotlinx.serialization.json)
-                implementation(libs.kotlin.reflect)
+                api(libs.kotlinx.serialization.json)
+                api(libs.kotlin.reflect)
 
-                implementation(libs.ktor.serialization.json)
+                api(libs.ktor.serialization.json)
 
-                implementation(libs.ktor.client.core)
-                implementation(libs.ktor.client.cio)
-                implementation(libs.ktor.client.content.negotiation)
+                api(libs.ktor.client.core)
+                api(libs.ktor.client.cio)
+                api(libs.ktor.client.content.negotiation)
             }
         }
     }
