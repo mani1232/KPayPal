@@ -28,12 +28,6 @@ license {
     setHeader(file("HEADER.txt"))
 }
 
-val javadocJar = tasks.register<Jar>("javadocJar") {
-    dependsOn(tasks.dokkaHtml)
-    archiveClassifier.set("javadoc")
-    from("$buildDir/dokka")
-}
-
 kotlin {
     withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
@@ -76,13 +70,9 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
-            artifact(javadocJar)
-            groupId = group.toString()
-            artifactId = "kpaypal-api"
-            version = rootProject.version.toString()
             from(components["kotlin"])
             pom {
-                name.set("kpaypal-api")
+                name.set("KPayPal")
                 description.set("Idiomatic Kotlin Wrapper for The PayPal API")
                 developers {
                     developer {
