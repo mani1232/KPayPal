@@ -40,13 +40,6 @@ kotlin {
     }
 }
 
-tasks {
-    build {
-        println(getenv("MAVENNAME"))
-        println(getenv("MAVENSECRET"))
-    }
-}
-
 publishing {
     repositories {
         maven {
