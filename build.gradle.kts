@@ -17,6 +17,12 @@ application {
     mainClass.set("cc.worldmandia.PPApiExampleKt")
 }
 
+tasks {
+    shadowJar {
+        exclude("$group.examples")
+    }
+}
+
 val dokkaOutputDir = "${layout.buildDirectory}/dokka"
 
 tasks.getByName<DokkaTask>("dokkaHtml") {
