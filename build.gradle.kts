@@ -1,4 +1,5 @@
 import java.io.ByteArrayOutputStream
+import java.lang.System.getenv
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -42,7 +43,10 @@ publishing {
         maven {
             name = "WorldMandiaRepositoryRelease"
             url = uri("https://repo.worldmandia.cc/releases")
-            credentials(PasswordCredentials::class)
+            credentials {
+                username = getenv("MAVEN_NAME")
+                password = getenv("MAVEN_SECRET")
+            }
             authentication {
                 create<BasicAuthentication>("basic")
             }
@@ -50,7 +54,10 @@ publishing {
         maven {
             name = "WorldMandiaRepositorySnapshots"
             url = uri("https://repo.worldmandia.cc/snapshots")
-            credentials(PasswordCredentials::class)
+            credentials {
+                username = getenv("MAVEN_NAME")
+                password = getenv("MAVEN_SECRET")
+            }
             authentication {
                 create<BasicAuthentication>("basic")
             }
