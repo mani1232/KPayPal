@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.ktor)
     alias(libs.plugins.dokka)
     alias(libs.plugins.updateDeps)
+    alias(libs.plugins.licenser)
     `maven-publish`
 }
 
@@ -21,6 +22,10 @@ tasks {
     shadowJar {
         exclude("$group.examples")
     }
+}
+
+license {
+    setHeader(file("HEADER.txt"))
 }
 
 val javadocJar = tasks.register<Jar>("javadocJar") {

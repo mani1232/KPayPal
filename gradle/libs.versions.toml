@@ -8,6 +8,7 @@ serializationJson = "1.7.1"
 updateVersions = "0.51.0"
 cache = "2.1.1-SNAPSHOT"
 dokka = "1.9.20"
+licenser = "0.6.1"
 
 [libraries]
 
@@ -31,3 +32,4 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 updateDeps = { id = "com.github.ben-manes.versions", version.ref = "updateVersions" }
+licenser = { id = "org.cadixdev.licenser", version.ref = "licenser" }
