@@ -79,7 +79,7 @@ publishing {
             groupId = group.toString()
             artifactId = "kpaypal-api"
             version = rootProject.version.toString()
-            from(components["java"])
+            from(components["kotlin"])
             pom {
                 name.set("KPayPal")
                 description.set("Idiomatic Kotlin Wrapper for The PayPal API")
