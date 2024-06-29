@@ -43,5 +43,5 @@ jobs:
     - name: Publish to GitHub Packages
       run: ./gradlew publish
       env:
-        MAVENNAME: ${{ secrets.MAVENNAME }} # token name
-        MAVENSECRET: ${{ secrets.MAVENSECRET }} # token secret (password)
+        MAVEN_NAME: ${{ secrets.MAVENNAME }} # token name
+        MAVEN_SECRET: ${{ secrets.MAVENSECRET }} # token secret (password)
