@@ -17,6 +17,7 @@ application {
 }
 
 kotlin {
+    withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.ordinal + 1)
     jvm {
         withJava()
@@ -36,6 +37,13 @@ kotlin {
                 implementation(libs.ktor.client.content.negotiation)
             }
         }
+    }
+}
+
+tasks {
+    build {
+        println(getenv("MAVEN_NAME"))
+        println(getenv("MAVEN_SECRET"))
     }
 }
 
