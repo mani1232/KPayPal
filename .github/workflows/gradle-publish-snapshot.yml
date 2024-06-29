@@ -41,7 +41,7 @@ jobs:
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      run: ./gradlew publishAllPublicationsToWorldMandiaRepositorySnapshotsRepository
+      run: ./gradlew publish
       env:
         MAVENNAME: ${{ secrets.MAVENNAME }} # token name
         MAVENSECRET: ${{ secrets.MAVENSECRET }} # token secret (password)
