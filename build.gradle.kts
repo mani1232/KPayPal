@@ -1,3 +1,5 @@
+import java.io.ByteArrayOutputStream
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinSerialization)
@@ -13,7 +15,7 @@ application {
 }
 
 kotlin {
-    jvmToolchain(JavaVersion.VERSION_21.ordinal + 1)
+    jvmToolchain(JavaVersion.VERSION_17.ordinal + 1)
     jvm {
         withJava()
     }
@@ -58,8 +60,39 @@ publishing {
         create<MavenPublication>("kpaypalApi") {
             groupId = group.toString()
             artifactId = "kpaypal-api"
-            version = findProperty("apiVersion").toString()
+            version = libraryVersion
             from(components["java"])
         }
     }
 }
+
+internal fun Project.git(vararg command: String): String {
+    val output = ByteArrayOutputStream()
+    exec {
+        commandLine("git", *command)
+        standardOutput = output
+        errorOutput = output
+        workingDir = rootDir
+    }.rethrowFailure().assertNormalExitValue()
+    return output.toString().trim()
+}
+
+private val Project.tag
+    get() = git("tag", "--no-column", "--points-at", "HEAD")
+        .takeIf { it.isNotBlank() }
+        ?.lines()
+        ?.single()
+
+val Project.libraryVersion
+    get() = tag ?: run {
+        val snapshotPrefix = when (val branch = git("branch", "--show-current")) {
+            "master" -> providers.gradleProperty("nextPlannedApiVersion").get()
+            else -> branch.replace('/', '-')
+        }
+        "$snapshotPrefix-SNAPSHOT"
+    }
+
+val Project.commitHash get() = git("rev-parse", "--verify", "HEAD")
+val Project.shortCommitHash get() = git("rev-parse", "--short", "HEAD")
+
+val Project.isRelease get() = tag != null
