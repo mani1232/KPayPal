@@ -23,20 +23,10 @@ tasks {
     }
 }
 
-val dokkaOutputDir = "${layout.buildDirectory}/dokka"
-
-tasks.getByName<DokkaTask>("dokkaHtml") {
-    outputDirectory.set(file(dokkaOutputDir))
-}
-
-val deleteDokkaOutputDir by tasks.register<Delete>("deleteDokkaOutputDirectory") {
-    delete(dokkaOutputDir)
-}
-
 val javadocJar = tasks.register<Jar>("javadocJar") {
-    dependsOn(deleteDokkaOutputDir, tasks.dokkaHtml)
+    dependsOn(tasks.dokkaHtml)
     archiveClassifier.set("javadoc")
-    from(dokkaOutputDir)
+    from("$buildDir/dokka")
 }
 
 kotlin {
