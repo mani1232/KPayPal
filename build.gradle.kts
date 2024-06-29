@@ -1,3 +1,4 @@
+import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.ByteArrayOutputStream
 import java.lang.System.getenv
 
@@ -14,6 +15,22 @@ rootProject.version = libraryVersion
 
 application {
     mainClass.set("cc.worldmandia.PPApiExampleKt")
+}
+
+val dokkaOutputDir = "${layout.buildDirectory}/dokka"
+
+tasks.getByName<DokkaTask>("dokkaHtml") {
+    outputDirectory.set(file(dokkaOutputDir))
+}
+
+val deleteDokkaOutputDir by tasks.register<Delete>("deleteDokkaOutputDirectory") {
+    delete(dokkaOutputDir)
+}
+
+val javadocJar = tasks.register<Jar>("javadocJar") {
+    dependsOn(deleteDokkaOutputDir, tasks.dokkaHtml)
+    archiveClassifier.set("javadoc")
+    from(dokkaOutputDir)
 }
 
 kotlin {
@@ -43,19 +60,10 @@ kotlin {
 publishing {
     repositories {
         maven {
-            name = "WorldMandiaRepositoryRelease"
-            url = uri("https://repo.worldmandia.cc/releases")
-            credentials {
-                username = getenv("MAVENNAME")
-                password = getenv("MAVENSECRET")
-            }
-            authentication {
-                create<BasicAuthentication>("basic")
-            }
-        }
-        maven {
-            name = "WorldMandiaRepositorySnapshots"
-            url = uri("https://repo.worldmandia.cc/snapshots")
+            name = "WorldMandiaRepository"
+            url = if (rootProject.version.toString()
+                    .endsWith("SNAPSHOT")
+            ) uri("https://repo.worldmandia.cc/snapshots") else uri("https://repo.worldmandia.cc/releases")
             credentials {
                 username = getenv("MAVENNAME")
                 password = getenv("MAVENSECRET")
@@ -67,10 +75,21 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
+            artifact(javadocJar)
             groupId = group.toString()
             artifactId = "kpaypal-api"
             version = rootProject.version.toString()
             from(components["java"])
+            pom {
+                name.set("KPayPal")
+                description.set("Idiomatic Kotlin Wrapper for The PayPal API")
+                developers {
+                    developer {
+                        name.set("mani123")
+                        email.set("support@worldmandia.cc")
+                    }
+                }
+            }
         }
     }
 }
