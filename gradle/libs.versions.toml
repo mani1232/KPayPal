@@ -1,0 +1,33 @@
+[versions]
+
+kotlin = "2.0.20-Beta1"
+ktor = "2.3.12" # 3.0.0-beta-1
+klogging = "0.5.14"
+coroutines = "1.9.0-RC"
+serializationJson = "1.7.1"
+updateVersions = "0.51.0"
+cache = "2.1.1-SNAPSHOT"
+dokka = "1.9.20"
+
+[libraries]
+
+other-klogging-slf4j = { module = "io.klogging:slf4j-klogging", version.ref = "klogging" }
+other-cache = { module = "com.mayakapps.kache:kache", version.ref = "cache" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-io", version.ref = "serializationJson" }
+
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+
+ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+[plugins]
+
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+updateDeps = { id = "com.github.ben-manes.versions", version.ref = "updateVersions" }
