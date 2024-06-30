@@ -53,8 +53,6 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
-            groupId = "cc.worldmandia"
-            artifactId = "kpaypal-api"
             version = libraryVersion
             from(components["kotlin"])
             pom {
