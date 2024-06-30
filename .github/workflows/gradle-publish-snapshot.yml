@@ -38,7 +38,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v3 # v3.1.0
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew kpaypal-api:build
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle

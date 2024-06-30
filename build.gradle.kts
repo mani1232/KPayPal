@@ -1,31 +1,15 @@
 import java.io.ByteArrayOutputStream
 
 plugins {
-    alias(libs.plugins.updateDeps)
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.ktor)
+    alias(libs.plugins.updateDeps) apply true
+    alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.kotlinJvm) apply false
+    alias(libs.plugins.kotlinSerialization) apply false
+    alias(libs.plugins.dokka) apply false
 }
 
+rootProject.group = "cc.worldmandia"
 rootProject.version = libraryVersion
-
-application {
-    mainClass.set("cc.worldmandia.PPApiExampleKt")
-}
-
-kotlin {
-    jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
-    jvm {
-        withJava()
-    }
-    sourceSets {
-        jvmMain {
-            dependencies {
-                implementation(libs.other.klogging.slf4j)
-                implementation(project(":kpaypal-api"))
-            }
-        }
-    }
-}
 
 private fun Project.git(vararg command: String): String {
     val output = ByteArrayOutputStream()

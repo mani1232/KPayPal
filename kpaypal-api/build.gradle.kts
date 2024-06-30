@@ -8,8 +8,6 @@ plugins {
     `maven-publish`
 }
 
-group = "cc.worldmandia"
-
 kotlin {
     withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())

@@ -14,10 +14,10 @@ dependencyResolutionManagement {
     repositories {
         mavenLocal()
         mavenCentral()
-        //maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-        //maven("https://jitpack.io")
+        maven("https://repo.worldmandia.cc/snapshots")
     }
 }
 
 rootProject.name = "KPayPal"
 include("kpaypal-api")
+include("kpaypal-examples")
