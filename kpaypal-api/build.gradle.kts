@@ -35,7 +35,7 @@ kotlin {
 publishing {
     repositories {
         maven {
-            name = "WorldMandiaRepository"
+            name = "WorldMandia"
             url = if (rootProject.version.toString()
                     .endsWith("SNAPSHOT")
             ) uri("https://repo.worldmandia.cc/snapshots") else uri("https://repo.worldmandia.cc/releases")
