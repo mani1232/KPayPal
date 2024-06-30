@@ -54,6 +54,7 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
+            version = rootProject.version.toString()
             from(components["kotlin"])
             pom {
                 name.set("KPayPal")
@@ -67,10 +68,6 @@ publishing {
             }
         }
     }
-}
-
-tasks.build {
-    println(tag)
 }
 
 private fun Project.git(vararg command: String): String {
