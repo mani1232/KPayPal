@@ -20,3 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KPayPal"
+include("kpaypal-api")

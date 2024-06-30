@@ -7,6 +7,7 @@ import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.LandingPag
 import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.PaymentMethodPreference
 import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.ShippingPreference
 import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.UserAction
+import io.klogging.config.getenv
 import io.klogging.logger
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
@@ -16,8 +17,8 @@ import kotlin.time.Duration.Companion.seconds
 suspend fun main() = coroutineScope {
     buildPayPalClient {
         credentials {
-            clientId = ""
-            clientSecret = ""
+            clientId = getenv("clientId").toString()
+            clientSecret = getenv("clientSecret").toString()
         }
     }
 

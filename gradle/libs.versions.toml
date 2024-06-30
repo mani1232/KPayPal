@@ -28,8 +28,8 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 [plugins]
 
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 updateDeps = { id = "com.github.ben-manes.versions", version.ref = "updateVersions" }
-licenser = { id = "org.cadixdev.licenser", version.ref = "licenser" }
