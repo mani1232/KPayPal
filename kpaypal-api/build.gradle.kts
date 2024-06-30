@@ -10,6 +10,7 @@ plugins {
 }
 
 group = "cc.worldmandia"
+version = libraryVersion
 
 kotlin {
     withSourcesJar()
@@ -53,7 +54,6 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
-            version = libraryVersion
             from(components["kotlin"])
             pom {
                 name.set("KPayPal")
