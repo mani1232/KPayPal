@@ -41,4 +41,4 @@ val Project.libraryVersion
 val Project.commitHash get() = git("rev-parse", "--verify", "HEAD")
 val Project.shortCommitHash get() = git("rev-parse", "--short", "HEAD")
 
-val Project.isRelease get() = tag?.contains(version) ?: false
+val Project.isRelease get() = tag?.contains(providers.gradleProperty("nextPlannedApiVersion").get()) ?: false
