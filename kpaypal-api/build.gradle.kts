@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "cc.worldmandia"
-version = libraryVersion
+rootProject.version = libraryVersion
 
 kotlin {
     withSourcesJar()
