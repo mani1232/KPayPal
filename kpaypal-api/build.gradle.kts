@@ -69,6 +69,10 @@ publishing {
     }
 }
 
+tasks.build {
+    println(tag)
+}
+
 private fun Project.git(vararg command: String): String {
     val output = ByteArrayOutputStream()
     exec {
@@ -84,7 +88,6 @@ private val Project.tag
     get() = git("tag", "--no-column", "--points-at", "HEAD")
         .takeIf { it.isNotBlank() }
         ?.lines()
-        ?.single()
 
 val Project.libraryVersion
     get() = tag ?: run {
@@ -98,4 +101,4 @@ val Project.libraryVersion
 val Project.commitHash get() = git("rev-parse", "--verify", "HEAD")
 val Project.shortCommitHash get() = git("rev-parse", "--short", "HEAD")
 
-val Project.isRelease get() = tag != null
+val Project.isRelease get() = tag?.contains(version) ?: false
