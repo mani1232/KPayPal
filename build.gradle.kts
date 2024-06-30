@@ -8,8 +8,10 @@ plugins {
     alias(libs.plugins.dokka) apply false
 }
 
-rootProject.group = "cc.worldmandia"
-rootProject.version = libraryVersion
+allprojects {
+    group = "cc.worldmandia"
+    version = libraryVersion
+}
 
 private fun Project.git(vararg command: String): String {
     val output = ByteArrayOutputStream()

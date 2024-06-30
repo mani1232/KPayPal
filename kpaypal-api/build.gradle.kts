@@ -8,9 +8,6 @@ plugins {
     `maven-publish`
 }
 
-group = rootProject.group
-version = rootProject.version
-
 kotlin {
     withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
