@@ -219,7 +219,7 @@ $dokka.location:cc.worldmandia.paypalApi/RequiredData/httpClient/#/PointingToDec
 $dokka.location:cc.worldmandia////PointingToDeclaration/-k-pay-pal/cc.worldmandia/index.html
 $dokka.location:cc.worldmandia//buildOrderRequest/#kotlin.Function1[cc.worldmandia.paypalApi.orderApi.builders.OrderRequest.OrderRequestBuilder,kotlin.Unit]/PointingToDeclaration/-k-pay-pal/cc.worldmandia/build-order-request.html
 $dokka.location:cc.worldmandia//buildPayPalClient/#kotlin.Function1[cc.worldmandia.paypalApi.PayPalClient.PayPalClientBuilder,kotlin.Unit]/PointingToDeclaration/-k-pay-pal/cc.worldmandia/build-pay-pal-client.html
-$dokka.location:cc.worldmandia//to/TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-k-pay-pal/cc.worldmandia/to.html
+$dokka.location:cc.worldmandia//toRP/TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-k-pay-pal/cc.worldmandia/to-r-p.html
 $dokka.location:cc.worldmandia/OrderDsl///PointingToDeclaration/-k-pay-pal/cc.worldmandia/-order-dsl/index.html
 $dokka.location:cc.worldmandia/PayPalDsl///PointingToDeclaration/-k-pay-pal/cc.worldmandia/-pay-pal-dsl/index.html
 $dokka.location:cc.worldmandia/RequestPair///PointingToDeclaration/-k-pay-pal/cc.worldmandia/-request-pair/index.html
