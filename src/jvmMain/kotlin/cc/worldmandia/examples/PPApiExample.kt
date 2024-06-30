@@ -16,8 +16,8 @@ import kotlin.time.Duration.Companion.seconds
 suspend fun main() = coroutineScope {
     buildPayPalClient {
         credentials {
-            clientId = "AQXggWNithZosKd7xpkG9nViS1Sseb1T8LoJN-SMLUqN2OYSc2_Tqtgt39-JDQqqUwiHB8fANFLzWgNp"
-            clientSecret = "EIYAbJKj8sCAU08l2eajHwrxYyyEZbkr9Cd8m-GSzU98cJoy60pmPlKsB-U4pg6z0D5u3u45PvWcT73Z"
+            clientId = ""
+            clientSecret = ""
         }
     }
 
