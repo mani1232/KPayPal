@@ -32,6 +32,10 @@ kotlin {
     }
 }
 
+tasks.build {
+    println(version)
+}
+
 publishing {
     repositories {
         maven {
@@ -50,6 +54,7 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
+            println("other ${this.version}")
             from(components["kotlin"])
             pom {
                 name.set("KPayPal")
