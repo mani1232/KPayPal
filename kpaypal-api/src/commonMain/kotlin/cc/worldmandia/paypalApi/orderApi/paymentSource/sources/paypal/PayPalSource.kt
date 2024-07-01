@@ -1,10 +1,11 @@
 package cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal
 
 import cc.worldmandia.OrderDsl
+import cc.worldmandia.paypalApi.PayPalLocale
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.format
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.text.SimpleDateFormat
-import java.util.*
 
 @Serializable
 @SerialName("paypal")
@@ -21,7 +22,7 @@ data class PayPalSource(
         var billingAgreementId: String? = null
         var vaultId: String? = null
         var emailAddress: String? = null
-        var birthDate: Date? = null
+        var birthDate: LocalDate? = null
 
         @OrderDsl
         fun experienceContext(block: ExperienceContext.Builder.() -> Unit) {
@@ -34,7 +35,7 @@ data class PayPalSource(
                 billingAgreementId = billingAgreementId,
                 vaultId = vaultId,
                 emailAddress = emailAddress,
-                birthDate = if (birthDate != null) SimpleDateFormat("yyyy-MM-dd").format(birthDate) else null,
+                birthDate = birthDate?.format(LocalDate.Formats.ISO),
             )
         }
     }
@@ -57,7 +58,7 @@ data class PayPalSource(
             var landingPage: LandingPage? = null
             var userAction: UserAction? = null
             var paymentMethodPreference: PaymentMethodPreference? = null
-            var locale: Locale? = null
+            var locale: PayPalLocale? = null
             var returnUrl: String? = null
             var cancelUrl: String? = null
 
@@ -68,7 +69,7 @@ data class PayPalSource(
                     landingPage = landingPage,
                     userAction = userAction,
                     paymentMethodPreference = paymentMethodPreference,
-                    locale = locale?.toLanguageTag(),
+                    locale = locale?.languageTag,
                     returnUrl = returnUrl,
                     cancelUrl = cancelUrl,
                 )

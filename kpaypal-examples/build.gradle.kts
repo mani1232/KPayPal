@@ -9,7 +9,7 @@ application {
 }
 
 dependencies {
-    implementation(libs.other.klogging.slf4j)
+    implementation(libs.kotlin.logging)
     implementation(project(":kpaypal-api"))
 }
 

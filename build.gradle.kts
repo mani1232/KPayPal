@@ -35,10 +35,12 @@ val Project.libraryVersion
             "master" -> providers.gradleProperty("nextPlannedApiVersion").get()
             else -> branch.replace('/', '-')
         }
-        if (isRelease) snapshotPrefix else "$snapshotPrefix-SNAPSHOT"
+        if (isRelease == true) snapshotPrefix else "$snapshotPrefix-SNAPSHOT"
     }
 
 val Project.commitHash get() = git("rev-parse", "--verify", "HEAD")
 val Project.shortCommitHash get() = git("rev-parse", "--short", "HEAD")
 
-val Project.isRelease get() = tag?.contains(providers.gradleProperty("nextPlannedApiVersion").get()) ?: false
+val Project.isRelease
+    get() = providers.gradleProperty("isRelease").get()
+        .toBooleanStrictOrNull() // tag?.contains(providers.gradleProperty("nextPlannedApiVersion").get()) ?: false

@@ -5,8 +5,8 @@ import cc.worldmandia.paypalApi.RequiredData
 import cc.worldmandia.paypalApi.orderApi.builders.OrderRequest
 import cc.worldmandia.paypalApi.orderApi.builders.OrderResponse
 import cc.worldmandia.toRP
-import io.klogging.Klogger
-import io.klogging.logger
+import io.github.oshai.kotlinlogging.KLogger
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.map
 
 interface OrderApi : RequiredData {
 
-    private val logger: Klogger
-        get() = logger("OrderApi")
+    private val logger: KLogger
+        get() = KotlinLogging.logger("OrderApi")
 
     fun createOrders(vararg orderRequest: OrderRequest): Flow<RequestPair<OrderRequest, OrderResponse?>> =
         orderRequest.asFlow().map {
@@ -30,7 +30,7 @@ interface OrderApi : RequiredData {
                     setBody(it)
                 }.body<OrderResponse>()
             } catch (e: Exception) {
-                logger.error("Filed to create order %s", e)
+                logger.error(e) { "Error while requesting orders" }
                 it toRP null
             }
         }
@@ -45,7 +45,7 @@ interface OrderApi : RequiredData {
                     }
                 }.body<OrderResponse>()
             } catch (e: Exception) {
-                logger.error("Failed to get order %s", e)
+                logger.error(e) { "Error while retrieving orders" }
                 it toRP null
             }
         }
@@ -60,7 +60,7 @@ interface OrderApi : RequiredData {
                     setBody(it.response)
                 }.body<OrderResponse>()
             } catch (e: Exception) {
-                logger.error("Failed to update order %s", e)
+                logger.error(e) { "Error while updating orders" }
                 it.request toRP null
             }
         }
@@ -73,7 +73,7 @@ interface OrderApi : RequiredData {
                 }
             }.body<OrderResponse>()
         } catch (e: Exception) {
-            logger.error("Failed to capture order %s", e)
+            logger.error(e) { "Error while capturing orders" }
             it toRP null
         }
     }
@@ -86,7 +86,7 @@ interface OrderApi : RequiredData {
                 }
             }.body<OrderResponse>()
         } catch (e: Exception) {
-            logger.error("Failed to authorize order %s", e)
+            logger.error(e) { "Error while authorize orders" }
             it toRP null
         }
     }

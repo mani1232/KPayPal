@@ -6,7 +6,7 @@ import cc.worldmandia.paypalApi.oauthApi.OauthApi
 import cc.worldmandia.paypalApi.oauthApi.builders.PayPalCredentials
 import cc.worldmandia.paypalApi.orderApi.OrderApi
 import io.ktor.client.*
-import io.ktor.client.engine.cio.*
+import io.ktor.client.engine.*
 import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
@@ -17,7 +17,8 @@ import kotlinx.serialization.json.Json
 
 data class PayPalClient(
     private val credentials: PayPalCredentials,
-    private val httpClient: HttpClient = HttpClient(CIO) {
+    private val engine: HttpClientEngineFactory<HttpClientEngineConfig>,
+    private val httpClient: HttpClient = HttpClient(engine) {
         defaultRequest {
             url(if (credentials.isSandbox) "https://api-m.sandbox.paypal.com/" else "https://api-m.paypal.com/")
             headers {
@@ -40,16 +41,20 @@ data class PayPalClient(
 
     class PayPalClientBuilder {
         private lateinit var credentials: PayPalCredentials
+        var engine: HttpClientEngineFactory<HttpClientEngineConfig>? = null
 
         @PayPalDsl
         fun credentials(block: PayPalCredentials.PayPalCredentialsBuilder.() -> Unit) {
             credentials = PayPalCredentials.PayPalCredentialsBuilder().apply(block).build()
         }
 
-        fun build(): PayPalClient {
-            return PayPalClient(
-                credentials
+        suspend fun build(defaultEngine: HttpClientEngineFactory<HttpClientEngineConfig>): PayPalClient {
+            val client = PayPalClient(
+                credentials,
+                engine ?: defaultEngine
             )
+            client.accessTokenResponse = client.getAccessToken()
+            return client
         }
     }
 
@@ -57,18 +62,12 @@ data class PayPalClient(
         PayPalApi.paypalClient = this
     }
 
-    private var localAccessTokenResponse: AccessTokenResponse = getAccessToken()
-
     private var updateTokenJob: Job = enableUpdateAccessToken()
 
     override val oauthTokenType: String
         get() = credentials.oauthTokenType
 
-    override var accessTokenResponse: AccessTokenResponse
-        get() = localAccessTokenResponse
-        set(value) {
-            localAccessTokenResponse = value
-        }
+    override lateinit var accessTokenResponse: AccessTokenResponse
 
     fun close() {
         updateTokenJob.cancel()

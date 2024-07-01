@@ -1,7 +1,5 @@
 package cc.worldmandia.paypalApi.oauthApi.builders
 
-import java.util.Base64.getEncoder
-
 data class PayPalCredentials(
     val clientId: String,
     val clientSecret: String,
@@ -18,9 +16,5 @@ data class PayPalCredentials(
         fun build(): PayPalCredentials {
             return PayPalCredentials(clientId, clientSecret, isSandbox, oauthTokenType)
         }
-    }
-
-    fun encodeToBase64(): String {
-        return getEncoder().encodeToString("$clientId:$clientSecret".toByteArray())
     }
 }

@@ -14,19 +14,33 @@ kotlin {
     jvm {
         withJava()
     }
+    js(IR) {
+        nodejs()
+        binaries.executable()
+    }
     sourceSets {
         commonMain {
             dependencies {
                 api(libs.kotlinx.coroutines)
-                implementation(libs.other.klogging.slf4j)
+                api(libs.kotlinx.datetime)
                 api(libs.kotlinx.serialization.json)
                 api(libs.kotlin.reflect)
+                implementation(libs.kotlin.logging)
 
                 api(libs.ktor.serialization.json)
 
                 api(libs.ktor.client.core)
-                api(libs.ktor.client.cio)
                 api(libs.ktor.client.content.negotiation)
+            }
+        }
+        jvmMain {
+            dependencies {
+                api(libs.ktor.client.cio)
+            }
+        }
+        jsMain {
+            dependencies {
+                api(libs.ktor.client.js)
             }
         }
     }
