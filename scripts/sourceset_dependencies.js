@@ -1,1 +1,1 @@
-sourceset_dependencies='{":kpaypal-api:dokkaHtml/commonMain":[],":kpaypal-api:dokkaHtml/jvmMain":[":kpaypal-api:dokkaHtml/commonMain"]}'
+sourceset_dependencies='{":kpaypal-api:dokkaHtml/commonMain":[],":kpaypal-api:dokkaHtml/jsMain":[":kpaypal-api:dokkaHtml/commonMain"],":kpaypal-api:dokkaHtml/jvmMain":[":kpaypal-api:dokkaHtml/commonMain"]}'
