@@ -36,7 +36,7 @@ publishing {
     repositories {
         maven {
             name = "WorldMandia"
-            url = if (rootProject.version.toString()
+            url = if (version.toString()
                     .endsWith("SNAPSHOT")
             ) uri("https://repo.worldmandia.cc/snapshots") else uri("https://repo.worldmandia.cc/releases")
             credentials {
@@ -50,7 +50,6 @@ publishing {
     }
     publications {
         create<MavenPublication>("kpaypalApi") {
-            version = rootProject.version.toString()
             from(components["kotlin"])
             pom {
                 name.set("KPayPal")
