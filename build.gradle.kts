@@ -10,7 +10,7 @@ plugins {
 
 allprojects {
     group = "cc.worldmandia"
-    version = libraryVersion
+    version = libraryVersion.toString().replace("[", "").replace("]", "")
 }
 
 private fun Project.git(vararg command: String): String {
