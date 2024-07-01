@@ -35,7 +35,7 @@ val Project.libraryVersion
             "master" -> providers.gradleProperty("nextPlannedApiVersion").get()
             else -> branch.replace('/', '-')
         }
-        if (isRelease) snapshotPrefix.replace("[", "").replace("]", "") else "$snapshotPrefix-SNAPSHOT"
+        if (isRelease) "$snapshotPrefix" else "$snapshotPrefix-SNAPSHOT"
     }
 
 val Project.commitHash get() = git("rev-parse", "--verify", "HEAD")
