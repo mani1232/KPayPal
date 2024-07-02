@@ -25,6 +25,7 @@ kotlin {
                 api(libs.kotlinx.datetime)
                 api(libs.kotlinx.serialization.json)
                 api(libs.kotlin.reflect)
+                api(libs.kotlinx.uuid)
                 implementation(libs.kotlin.logging)
 
                 api(libs.ktor.serialization.json)
@@ -41,7 +42,6 @@ kotlin {
         jsMain {
             dependencies {
                 api(libs.ktor.client.js)
-                api(npm("uuid", ">= 10.0.0"))
             }
         }
     }

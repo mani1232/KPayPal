@@ -9,12 +9,14 @@ cache = "2.1.1-SNAPSHOT"
 dokka = "1.9.20"
 datetime = "0.6.0"
 logging = "7.0.0"
+uuid = "0.0.26"
 
 [libraries]
 
 other-cache = { module = "com.mayakapps.kache:kache", version.ref = "cache" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+kotlinx-uuid = { module = "app.softwork:kotlinx-uuid-core", version.ref = "uuid" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-io", version.ref = "serializationJson" }
 
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
