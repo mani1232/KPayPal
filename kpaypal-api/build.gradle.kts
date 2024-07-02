@@ -41,6 +41,7 @@ kotlin {
         jsMain {
             dependencies {
                 api(libs.ktor.client.js)
+                api(npm("uuid", ">= 10.0.0"))
             }
         }
     }
