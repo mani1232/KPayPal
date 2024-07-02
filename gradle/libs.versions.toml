@@ -16,7 +16,7 @@ uuid = "0.0.26"
 other-cache = { module = "com.mayakapps.kache:kache", version.ref = "cache" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
-kotlinx-uuid = { module = "app.softwork:kotlinx-uuid-core", version.ref = "uuid" }
+kotlinx-uuid = { module = "app.softwork:kotlinx-uuid-datetime", version.ref = "uuid" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-io", version.ref = "serializationJson" }
 
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }

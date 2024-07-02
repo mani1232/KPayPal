@@ -4,7 +4,7 @@ import cc.worldmandia.OrderDsl
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.uuid.UUIDExperimentalAPI
-import kotlinx.uuid.UUIDv7
+import kotlinx.uuid.datetime.UUIDv7
 
 @Serializable
 data class PurchaseUnit(
@@ -22,7 +22,7 @@ data class PurchaseUnit(
         var description: String? = null
         var customId: String? = null
         @OptIn(UUIDExperimentalAPI::class)
-        var referenceId: String = UUIDv7(42).toString(false)
+        var referenceId: String = UUIDv7().toString()
         var softDescriptor: String? = null
         var items: List<Item>? = null
         var invoiceId: String? = null
