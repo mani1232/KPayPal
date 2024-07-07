@@ -258,9 +258,6 @@ $dokka.location:cc.worldmandia////PointingToDeclaration/kpaypal-api/cc.worldman
 $dokka.location:cc.worldmandia//buildOrderRequest/#kotlin.Function1[cc.worldmandia.paypalApi.orderApi.builders.OrderRequest.OrderRequestBuilder,kotlin.Unit]/PointingToDeclaration/kpaypal-api/cc.worldmandia/build-order-request.html
 $dokka.location:cc.worldmandia//buildPayPalClient/#kotlin.Function1[cc.worldmandia.paypalApi.PayPalClient.PayPalClientBuilder,kotlin.Unit]/PointingToDeclaration/kpaypal-api/cc.worldmandia/[jvm]build-pay-pal-client.html
 $dokka.location:cc.worldmandia//encodeToBase64/#kotlin.String/PointingToDeclaration/kpaypal-api/cc.worldmandia/encode-to-base64.html
-$dokka.location:cc.worldmandia//toRP/TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/kpaypal-api/cc.worldmandia/to-r-p.html
-$dokka.location:cc.worldmandia/OrderDsl///PointingToDeclaration/kpaypal-api/cc.worldmandia/-order-dsl/index.html
-$dokka.location:cc.worldmandia/PayPalDsl///PointingToDeclaration/kpaypal-api/cc.worldmandia/-pay-pal-dsl/index.html
 $dokka.location:cc.worldmandia/RequestPair///PointingToDeclaration/kpaypal-api/cc.worldmandia/-request-pair/index.html
 $dokka.location:cc.worldmandia/RequestPair/RequestPair/#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/kpaypal-api/cc.worldmandia/-request-pair/-request-pair.html
 $dokka.location:cc.worldmandia/RequestPair/request/#/PointingToDeclaration/kpaypal-api/cc.worldmandia/-request-pair/request.html
