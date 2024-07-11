@@ -214,6 +214,7 @@ $dokka.location:cc.worldmandia.paypalApi/PayPalClient/accessToken/#/PointingToDe
 $dokka.location:cc.worldmandia.paypalApi/PayPalClient/accessTokenResponse/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/access-token-response.html
 $dokka.location:cc.worldmandia.paypalApi/PayPalClient/close/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/close.html
 $dokka.location:cc.worldmandia.paypalApi/PayPalClient/credentials/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/credentials.html
+$dokka.location:cc.worldmandia.paypalApi/PayPalClient/enableWebHook/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/enable-web-hook.html
 $dokka.location:cc.worldmandia.paypalApi/PayPalClient/httpClient/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/http-client.html
 $dokka.location:cc.worldmandia.paypalApi/PayPalClient/oauthTokenType/#/PointingToDeclaration/kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-client/oauth-token-type.html
 $dokka.location:cc.worldmandia.paypalApi/PayPalLocale.ARABIC///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}kpaypal-api/cc.worldmandia.paypalApi/-pay-pal-locale/-a-r-a-b-i-c/index.html
