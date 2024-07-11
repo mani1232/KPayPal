@@ -74,6 +74,10 @@ data class PayPalClient(
         httpClient.close()
     }
 
+    fun enableWebHook() {
+        // TODO need server js target
+    }
+
     override fun httpClient(): HttpClient {
         return httpClient
     }
