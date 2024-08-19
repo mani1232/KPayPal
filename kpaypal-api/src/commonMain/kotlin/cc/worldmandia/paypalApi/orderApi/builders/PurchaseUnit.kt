@@ -1,10 +1,11 @@
 package cc.worldmandia.paypalApi.orderApi.builders
 
+import app.softwork.uuid.datetime.Uuidv7
 import cc.worldmandia.OrderDsl
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.uuid.UUIDExperimentalAPI
-import kotlinx.uuid.datetime.UUIDv7
+import kotlin.random.Random
+import kotlin.uuid.ExperimentalUuidApi
 
 @Serializable
 data class PurchaseUnit(
@@ -21,8 +22,9 @@ data class PurchaseUnit(
         private lateinit var amount: Amount
         var description: String? = null
         var customId: String? = null
-        @OptIn(UUIDExperimentalAPI::class)
-        var referenceId: String = UUIDv7().toString()
+
+        @OptIn(ExperimentalUuidApi::class)
+        var referenceId: String = Uuidv7(random = Random).toString()
         var softDescriptor: String? = null
         var items: List<Item>? = null
         var invoiceId: String? = null
