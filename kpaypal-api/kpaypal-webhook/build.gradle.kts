@@ -37,7 +37,7 @@ publishing {
                 licenses {
                     license {
                         name.set("GNU License")
-                        url.set("https://github.com/mani1232/KPayPal/blob/master/HEADER.txt")
+                        url.set("https://github.com/mani1232/KPayPal/LICENSE")
                     }
                 }
 
