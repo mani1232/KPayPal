@@ -1,15 +1,15 @@
 [versions]
 
-kotlin = "2.0.20-RC2"
-ktor = "3.0.0-beta-2"
-coroutines = "1.9.0-RC.2"
-serializationJson = "1.7.1"
+kotlin = "2.1.0-Beta2"
+ktor = "3.0.0"
+coroutines = "1.9.0"
+serializationJson = "1.7.3"
 updateVersions = "0.51.0"
 cache = "2.1.1-SNAPSHOT"
-dokka = "1.9.20"
-datetime = "0.6.0"
+dokka = "2.0.0-Beta"
+datetime = "0.6.1"
 logging = "7.0.0"
-uuid = "0.1.1"
+uuid = "0.1.2"
 
 [libraries]
 
