@@ -27,7 +27,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
       - name: Build docs with Gradle
-        run: ./gradlew --stacktrace --info dokkaHtml
+        run: ./gradlew --stacktrace --info dokkaGenerate
       - name: Deploy docs to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
