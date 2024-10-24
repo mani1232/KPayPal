@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 rootProject.name = "KPayPal"
 include("kpaypal-api")
 include("kpaypal-examples")
+include("kpaypal-api:kpaypal-core")
+findProject(":kpaypal-api:kpaypal-core")?.name = "kpaypal-core"
+include("kpaypal-api:kpaypal-webhook")
+findProject(":kpaypal-api:kpaypal-webhook")?.name = "kpaypal-webhook"

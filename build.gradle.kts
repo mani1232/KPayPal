@@ -14,7 +14,8 @@ allprojects {
 }
 
 dependencies {
-    dokka(project(":kpaypal-api"))
+    dokka(project(":kpaypal-api:kpaypal-core"))
+    dokka(project(":kpaypal-api:kpaypal-webhook"))
 }
 
 private fun Project.git(vararg command: String): String {

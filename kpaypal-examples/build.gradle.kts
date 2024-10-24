@@ -10,7 +10,7 @@ application {
 
 dependencies {
     implementation(libs.kotlin.logging)
-    implementation(project(":kpaypal-api"))
+    implementation(project(":kpaypal-api:kpaypal-core"))
 }
 
 kotlin {

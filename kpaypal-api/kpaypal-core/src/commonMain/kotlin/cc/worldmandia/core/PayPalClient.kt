@@ -18,6 +18,15 @@ import kotlinx.serialization.json.Json
 data class PayPalClient(
     private val credentials: PayPalCredentials,
     private val engine: HttpClientEngineFactory<HttpClientEngineConfig>,
+    private val customJson: Json = Json {
+        encodeDefaults = true
+        isLenient = true
+        allowSpecialFloatingPointValues = true
+        allowStructuredMapKeys = true
+        prettyPrint = true
+        useArrayPolymorphism = true
+        ignoreUnknownKeys = true
+    },
     private val httpClient: HttpClient = HttpClient(engine) {
         defaultRequest {
             url(if (credentials.isSandbox) "https://api-m.sandbox.paypal.com/" else "https://api-m.paypal.com/")
@@ -26,15 +35,7 @@ data class PayPalClient(
             }
         }
         install(ContentNegotiation) {
-            json(Json {
-                encodeDefaults = true
-                isLenient = true
-                allowSpecialFloatingPointValues = true
-                allowStructuredMapKeys = true
-                prettyPrint = true
-                useArrayPolymorphism = true
-                ignoreUnknownKeys = true
-            })
+            json(customJson)
         }
     }
 ) : OrderApi, OauthApi {
@@ -72,10 +73,6 @@ data class PayPalClient(
     fun close() {
         updateTokenJob.cancel()
         httpClient.close()
-    }
-
-    fun enableWebHook() {
-        // TODO need server js target
     }
 
     override fun httpClient(): HttpClient {

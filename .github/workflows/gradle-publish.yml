@@ -36,12 +36,12 @@ jobs:
       uses: gradle/actions/setup-gradle@v3 # v3.1.0
 
     - name: Build with Gradle
-      run: ./gradlew kpaypal-api:build
+      run: ./gradlew build
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      run: ./gradlew kpaypal-api:publish
+      run: ./gradlew publish
       env:
         MAVEN_NAME: ${{ secrets.MAVENNAME }} # token name
         MAVEN_SECRET: ${{ secrets.MAVENSECRET }} # token secret (password)
