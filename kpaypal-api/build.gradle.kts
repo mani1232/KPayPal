@@ -69,11 +69,29 @@ publishing {
             pom {
                 name.set("KPayPal")
                 description.set("Idiomatic Kotlin Wrapper for The PayPal API")
+                url.set("https://github.com/mani1232/KPayPal")
+
+                licenses {
+                    license {
+                        name.set("GNU License")
+                        url.set("https://github.com/mani1232/KPayPal/blob/master/HEADER.txt")
+                    }
+                }
+
                 developers {
                     developer {
-                        name.set("mani123")
+                        id.set("mani1232")
+                        name.set("mani1232")
                         email.set("support@worldmandia.cc")
+                        organization.set("WorldMandia")
+                        organizationUrl.set("https://worldmandia.cc")
                     }
+                }
+
+                scm {
+                    connection.set("scm:git:git://github.com/mani1232/KPayPal.git")
+                    developerConnection.set("scm:git:ssh://github.com/KPayPal.git")
+                    url.set("https://github.com/mani1232/KPayPal")
                 }
             }
         }
