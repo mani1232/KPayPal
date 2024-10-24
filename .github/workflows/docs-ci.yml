@@ -31,7 +31,7 @@ jobs:
       - name: Deploy docs to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: kpaypal-api/build/dokka/html
+          folder: build/dokka/html
           branch: gh-pages
           git-config-name: GitHub Actions
           git-config-email: actions@github.com
