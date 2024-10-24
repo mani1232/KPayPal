@@ -1,0 +1,15 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:cc.worldmandia.common//buildPayPalClient/#kotlin.Function1[cc.worldmandia.core.PayPalClient.PayPalClientBuilder,kotlin.Unit]/PointingToDeclaration/KPayPal-core/cc.worldmandia.common/[jvm]build-pay-pal-client.html
+module:KPayPal-core
+cc.worldmandia.common
+cc.worldmandia.core
+cc.worldmandia.core.oauth
+cc.worldmandia.core.oauth.builders
+cc.worldmandia.core.order
+cc.worldmandia.core.order.builders
+cc.worldmandia.core.order.paymentSource
+cc.worldmandia.core.order.paymentSource.sources.paypal
+module:KPayPal-webhook
+cc.worldmandia.common
+cc.worldmandia.webhook
