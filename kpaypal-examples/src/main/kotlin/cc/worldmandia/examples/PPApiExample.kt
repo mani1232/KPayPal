@@ -1,13 +1,13 @@
 package cc.worldmandia.examples
 
-import cc.worldmandia.buildOrderRequest
-import cc.worldmandia.buildPayPalClient
-import cc.worldmandia.paypalApi.PayPalApi
-import cc.worldmandia.paypalApi.PayPalLocale
-import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.LandingPage
-import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.PaymentMethodPreference
-import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.ShippingPreference
-import cc.worldmandia.paypalApi.orderApi.paymentSource.sources.paypal.UserAction
+import cc.worldmandia.common.buildOrderRequest
+import cc.worldmandia.common.buildPayPalClient
+import cc.worldmandia.core.PayPalApi
+import cc.worldmandia.core.PayPalLocale
+import cc.worldmandia.core.order.paymentSource.sources.paypal.LandingPage
+import cc.worldmandia.core.order.paymentSource.sources.paypal.PaymentMethodPreference
+import cc.worldmandia.core.order.paymentSource.sources.paypal.ShippingPreference
+import cc.worldmandia.core.order.paymentSource.sources.paypal.UserAction
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.coroutineScope
 import java.lang.System.getenv
