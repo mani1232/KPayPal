@@ -47,6 +47,23 @@ kotlin {
     }
 }
 
+dokka {
+    moduleName.set("KPayPal")
+    dokkaSourceSets.named("commonMain") {
+        includes.from("README.md")
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl("https://kpaypal.worldmandia.cc")
+            remoteLineSuffix.set("#L")
+        }
+    }
+    pluginsConfiguration.html {
+        customStyleSheets.from("styles.css")
+        customAssets.from("logo.png")
+        footerMessage.set("(c) WorldMandia")
+    }
+}
+
 publishing {
     repositories {
         maven {
