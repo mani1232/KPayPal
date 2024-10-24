@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PayPalClient</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo.png">
+<link href="../../../styles/styles.css" rel="Stylesheet">
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            KPayPal-api
+                    </a>
+            </div>
+            <div class="library-version">
+0.0.2-SNAPSHOT            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":kpaypal-api/commonMain">common</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="KPayPal-api::cc.worldmandia.paypalApi/PayPalClient///PointingToDeclaration//1050915044">
+  <div class="breadcrumbs"><a href="../../../index.html">KPayPal-api</a><span class="delimiter">/</span><a href="../index.html">cc.worldmandia.paypalApi</a><span class="delimiter">/</span><span class="current">PayPalClient</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Pay</span><wbr></wbr><span>Pal</span><wbr></wbr><span><span>Client</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">PayPalClient</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentials<span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi.builders/-pay-pal-credentials/index.html">PayPalCredentials</a><span class="token punctuation">, </span></span><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngineFactory///PointingToDeclaration/">HttpClientEngineFactory</span><span class="token operator">&lt;</span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngineConfig///PointingToDeclaration/">HttpClientEngineConfig</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">httpClient<span class="token operator">: </span><span data-unresolved-link="io.ktor.client/HttpClient///PointingToDeclaration/">HttpClient</span><span class="token operator"> = </span>HttpClient(engine) {
+        defaultRequest {
+            url(if (credentials.isSandbox) &quot;https://api-m.sandbox.paypal.com/&quot; else &quot;https://api-m.paypal.com/&quot;)
+            headers {
+                append(HttpHeaders.ContentType, ContentType.Application.Json)
+            }
+        }
+        install(ContentNegotiation) {
+            json(Json {
+                encodeDefaults = true
+                isLenient = true
+                allowSpecialFloatingPointValues = true
+                allowStructuredMapKeys = true
+                prettyPrint = true
+                useArrayPolymorphism = true
+                ignoreUnknownKeys = true
+            })
+        }
+    }</span></span><span class="token punctuation">)</span> : <a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/index.html">OrderApi</a>, <a href="../../cc.worldmandia.paypalApi.oauthApi/-oauth-api/index.html">OauthApi</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="185628031%2FConstructors%2F1050915044" anchor-label="PayPalClient" id="185628031%2FConstructors%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pay-pal-client.html"><span>Pay</span><wbr></wbr><span>Pal</span><wbr></wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="185628031%2FConstructors%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentials<span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi.builders/-pay-pal-credentials/index.html">PayPalCredentials</a><span class="token punctuation">, </span></span><span class="parameter ">engine<span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngineFactory///PointingToDeclaration/">HttpClientEngineFactory</span><span class="token operator">&lt;</span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngineConfig///PointingToDeclaration/">HttpClientEngineConfig</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">httpClient<span class="token operator">: </span><span data-unresolved-link="io.ktor.client/HttpClient///PointingToDeclaration/">HttpClient</span><span class="token operator"> = </span>HttpClient(engine) {
+        defaultRequest {
+            url(if (credentials.isSandbox) &quot;https://api-m.sandbox.paypal.com/&quot; else &quot;https://api-m.paypal.com/&quot;)
+            headers {
+                append(HttpHeaders.ContentType, ContentType.Application.Json)
+            }
+        }
+        install(ContentNegotiation) {
+            json(Json {
+                encodeDefaults = true
+                isLenient = true
+                allowSpecialFloatingPointValues = true
+                allowStructuredMapKeys = true
+                prettyPrint = true
+                useArrayPolymorphism = true
+                ignoreUnknownKeys = true
+            })
+        }
+    }</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1142904212%2FClasslikes%2F1050915044" anchor-label="PayPalClientBuilder" id="1142904212%2FClasslikes%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pay-pal-client-builder/index.html"><span>Pay</span><wbr></wbr><span>Pal</span><wbr></wbr><span>Client</span><wbr></wbr><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1142904212%2FClasslikes%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-pay-pal-client-builder/index.html">PayPalClientBuilder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1681864056%2FProperties%2F1050915044" anchor-label="accessTokenResponse" id="-1681864056%2FProperties%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="access-token-response.html"><span>access</span><wbr></wbr><span>Token</span><wbr></wbr><span><span>Response</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1681864056%2FProperties%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">lateinit override </span><span class="token keyword">var </span><a href="access-token-response.html">accessTokenResponse</a><span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi/-access-token-response/index.html">AccessTokenResponse</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-549078464%2FProperties%2F1050915044" anchor-label="oauthTokenType" id="-549078464%2FProperties%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="oauth-token-type.html"><span>oauth</span><wbr></wbr><span>Token</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-549078464%2FProperties%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="oauth-token-type.html">oauthTokenType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="190418889%2FFunctions%2F1050915044" anchor-label="accessToken" id="190418889%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="access-token.html"><span>access</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="190418889%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="access-token.html"><span class="token function">accessToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi/-access-token-response/index.html">AccessTokenResponse</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1673798405%2FFunctions%2F1050915044" anchor-label="authorizeOrder" id="-1673798405%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/authorize-order.html"><span>authorize</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1673798405%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">infix suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/authorize-order.html"><span class="token function">authorizeOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="294987798%2FFunctions%2F1050915044" anchor-label="authorizeOrders" id="294987798%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/authorize-orders.html"><span>authorize</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="294987798%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/authorize-orders.html"><span class="token function">authorizeOrders</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="285480254%2FFunctions%2F1050915044" anchor-label="captureOrder" id="285480254%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/capture-order.html"><span>capture</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="285480254%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">infix suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/capture-order.html"><span class="token function">captureOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1703084403%2FFunctions%2F1050915044" anchor-label="captureOrders" id="1703084403%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/capture-orders.html"><span>capture</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1703084403%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/capture-orders.html"><span class="token function">captureOrders</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-300893466%2FFunctions%2F1050915044" anchor-label="close" id="-300893466%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close.html"><span><span>close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-300893466%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-528445532%2FFunctions%2F1050915044" anchor-label="createOrder" id="-528445532%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/create-order.html"><span>create</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-528445532%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">infix suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/create-order.html"><span class="token function">createOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderRequest<span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1578648013%2FFunctions%2F1050915044" anchor-label="createOrders" id="1578648013%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/create-orders.html"><span>create</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1578648013%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/create-orders.html"><span class="token function">createOrders</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>orderRequest<span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1808106914%2FFunctions%2F1050915044" anchor-label="credentials" id="1808106914%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="credentials.html"><span><span>credentials</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1808106914%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="credentials.html"><span class="token function">credentials</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi.builders/-pay-pal-credentials/index.html">PayPalCredentials</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1169136067%2FFunctions%2F1050915044" anchor-label="enableUpdateAccessToken" id="1169136067%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.oauthApi/-oauth-api/enable-update-access-token.html"><span>enable</span><wbr></wbr><span>Update</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1169136067%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.oauthApi/-oauth-api/enable-update-access-token.html"><span class="token function">enableUpdateAccessToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Deferred///PointingToDeclaration/">Deferred</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="159579082%2FFunctions%2F1050915044" anchor-label="enableWebHook" id="159579082%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-web-hook.html"><span>enable</span><wbr></wbr><span>Web</span><wbr></wbr><span><span>Hook</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="159579082%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="enable-web-hook.html"><span class="token function">enableWebHook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2017763567%2FFunctions%2F1050915044" anchor-label="getAccessToken" id="2017763567%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.oauthApi/-oauth-api/get-access-token.html"><span>get</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2017763567%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.oauthApi/-oauth-api/get-access-token.html"><span class="token function">getAccessToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia.paypalApi.oauthApi/-access-token-response/index.html">AccessTokenResponse</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-47131986%2FFunctions%2F1050915044" anchor-label="getOrder" id="-47131986%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/get-order.html"><span>get</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-47131986%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">infix suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/get-order.html"><span class="token function">getOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2088089091%2FFunctions%2F1050915044" anchor-label="getOrders" id="2088089091%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/get-orders.html"><span>get</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2088089091%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/get-orders.html"><span class="token function">getOrders</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-872106199%2FFunctions%2F1050915044" anchor-label="httpClient" id="-872106199%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="http-client.html"><span>http</span><wbr></wbr><span><span>Client</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-872106199%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="http-client.html"><span class="token function">httpClient</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.ktor.client/HttpClient///PointingToDeclaration/">HttpClient</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="446652794%2FFunctions%2F1050915044" anchor-label="updateOrder" id="446652794%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/update-order.html"><span>update</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="446652794%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">infix suspend </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/update-order.html"><span class="token function">updateOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1078404873%2FFunctions%2F1050915044" anchor-label="updateOrders" id="-1078404873%2FFunctions%2F1050915044" data-filterable-set=":kpaypal-api/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kpaypal-api/commonMain" data-filterable-set=":kpaypal-api/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/update-orders.html"><span>update</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1078404873%2FFunctions%2F1050915044"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kpaypal-api/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../../cc.worldmandia.paypalApi.orderApi/-order-api/update-orders.html"><span class="token function">updateOrders</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>orderInfo<span class="token operator">: </span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-request/index.html">OrderRequest</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../cc.worldmandia/-request-pair/index.html">RequestPair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../cc.worldmandia.paypalApi.orderApi.builders/-order-response/index.html">OrderResponse</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>(c) WorldMandia</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
