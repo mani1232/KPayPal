@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.dokka)
     alias(libs.plugins.updateDeps)
     `maven-publish`
 }
@@ -23,16 +22,41 @@ kotlin {
 }
 
 dokka {
-    moduleName.set("KPayPal-webhook")
-    dokkaSourceSets.all {
-        includes.from("docs/INFO.md")
-        sourceLink {
-            localDirectory.set(file("src/main/kotlin"))
-            remoteUrl("https://kpaypal.worldmandia.cc")
-            remoteLineSuffix.set("#L")
+    moduleName.set("KPayPal-Webhook")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("kpaypalWebhook") {
+            from(components["kotlin"])
+            pom {
+                name.set("KPayPal-webhook")
+                description.set("Idiomatic Kotlin Wrapper for The PayPal API")
+                url.set("https://github.com/mani1232/KPayPal")
+
+                licenses {
+                    license {
+                        name.set("GNU License")
+                        url.set("https://github.com/mani1232/KPayPal/blob/master/HEADER.txt")
+                    }
+                }
+
+                developers {
+                    developer {
+                        id.set("mani1232")
+                        name.set("mani1232")
+                        email.set("support@worldmandia.cc")
+                        organization.set("WorldMandia")
+                        organizationUrl.set("https://worldmandia.cc")
+                    }
+                }
+
+                scm {
+                    connection.set("scm:git:git://github.com/mani1232/KPayPal.git")
+                    developerConnection.set("scm:git:ssh://github.com/KPayPal.git")
+                    url.set("https://github.com/mani1232/KPayPal")
+                }
+            }
         }
-    }
-    pluginsConfiguration.html {
-        footerMessage.set("(c) WorldMandia")
     }
 }

@@ -5,17 +5,12 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.kotlinSerialization) apply false
-    alias(libs.plugins.dokka) apply true
+    alias(libs.plugins.dokka) apply false
 }
 
 allprojects {
     group = "cc.worldmandia"
     version = libraryVersion
-}
-
-dependencies {
-    dokka(project(":kpaypal-api:kpaypal-core"))
-    dokka(project(":kpaypal-api:kpaypal-webhook"))
 }
 
 private fun Project.git(vararg command: String): String {
