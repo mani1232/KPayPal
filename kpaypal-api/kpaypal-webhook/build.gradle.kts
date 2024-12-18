@@ -16,6 +16,7 @@ kotlin {
         commonMain {
             dependencies {
                 api(project(":kpaypal-api:kpaypal-core"))
+                implementation(libs.kotlin.logging)
             }
         }
     }

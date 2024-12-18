@@ -5,4 +5,4 @@ data class RequestPair<out A, out B>(
     val response: B
 )
 
-internal infix fun <A, B> A.toRP(that: B): RequestPair<A, B> = RequestPair(this, that)
+infix fun <A, B> A.toRP(that: B): RequestPair<A, B> = RequestPair(this, that)
