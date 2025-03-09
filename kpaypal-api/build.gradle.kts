@@ -1,7 +1,5 @@
-import java.lang.System.getenv
-
 plugins {
-    alias(libs.plugins.dokka)
+    alias(libs.plugins.dokka) apply true
     `maven-publish`
 }
 
