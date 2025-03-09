@@ -28,21 +28,3 @@ dokka {
         footerMessage.set("(c) WorldMandia")
     }
 }
-
-publishing {
-    repositories {
-        maven {
-            name = "WorldMandia"
-            url = if (version.toString()
-                    .endsWith("SNAPSHOT")
-            ) uri("https://repo.worldmandia.cc/snapshots") else uri("https://repo.worldmandia.cc/releases")
-            credentials {
-                username = getenv("MAVEN_NAME")
-                password = getenv("MAVEN_SECRET")
-            }
-            authentication {
-                create<BasicAuthentication>("basic")
-            }
-        }
-    }
-}

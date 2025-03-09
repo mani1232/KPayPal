@@ -8,9 +8,7 @@ plugins {
 kotlin {
     withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
-    jvm {
-        withJava()
-    }
+    jvm {}
 
     sourceSets {
         commonMain {

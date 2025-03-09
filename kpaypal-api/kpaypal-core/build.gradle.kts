@@ -1,3 +1,5 @@
+import java.lang.System.getenv
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinSerialization)
@@ -8,9 +10,7 @@ plugins {
 kotlin {
     withSourcesJar()
     jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
-    jvm {
-        withJava()
-    }
+    jvm { }
     js(IR) {
         nodejs()
         binaries.executable()
@@ -78,6 +78,23 @@ publishing {
                     connection.set("scm:git:git://github.com/mani1232/KPayPal.git")
                     developerConnection.set("scm:git:ssh://github.com/KPayPal.git")
                     url.set("https://github.com/mani1232/KPayPal")
+                }
+            }
+        }
+    }
+    publishing {
+        repositories {
+            maven {
+                name = "WorldMandia"
+                url = if (version.toString()
+                        .endsWith("SNAPSHOT")
+                ) uri("https://repo.worldmandia.cc/snapshots") else uri("https://repo.worldmandia.cc/releases")
+                credentials {
+                    username = getenv("MAVEN_NAME")
+                    password = getenv("MAVEN_SECRET")
+                }
+                authentication {
+                    create<BasicAuthentication>("basic")
                 }
             }
         }
