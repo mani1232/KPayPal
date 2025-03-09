@@ -129,4 +129,4 @@ dependencies {
 
 ## Will you support other kotlin targets
 
-We currently support Kotlin/JVM and Kotlin/Js, there are no plans to add support for other targets, but you are welcome to do so.
+We currently support Kotlin/JVM and Kotlin/Js, there are no plans to add support for other targets, but you are welcome to do so. 
